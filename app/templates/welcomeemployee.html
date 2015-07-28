@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+        <h1> Thank you for checking attendance, {% for emp in employees %} {{emp.name}} {% endfor %}! </h1>
+		</br>
+		<p>Click <a href ="/logout">here</a> to logout </p>
+		{% for message in get_flashed_messages() %}
+        <b>{{ message }} </b>
+        {% endfor %}
+	
+{% endblock %}

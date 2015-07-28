@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+        <h1> Welcome back, boss! </h1>
+		</br>
+		<p>Click <a href ="/logout">here</a> to logout </p>
+		<p>Click <a href ="/view"> here</a> to see today employee check-in </p> 
+		<!-- messages -->
+        {% for message in get_flashed_messages() %}
+        <b>{{ message }} </b>
+        {% endfor %}
+	
+{% endblock %}

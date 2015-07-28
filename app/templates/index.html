@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+    {% block content %}
+        <h1> Welcome to The Company </h1>
+		</br>
+		<p>Click <a href ="/loginasboss">here</a> to login as admin</p>
+		{%  for message in get_flashed_messages() %}
+           {{message}}
+        {% endfor %}
+
+         <br> 
+    <p>Click <a href ="/loginasemployee">here</a> to login as employee</p>
+    {%  for message in get_flashed_messages() %}
+          <b> {{message}} </b>
+
+        {% endfor %}
+         
+          <table align="center" style="width:50%">
+          <caption align="center"> <h1> Employees of The Company </h1> </caption>
+          
+          <tr> <th> <strong> Employee ID  </strong> </th> 
+          	   <th> <strong> Employee Name  </strong> </th> 
+               <th> <strong> Contact Info </strong> </th>
+          </tr>
+
+          <tr>
+          	    {% for emp in employees %}
+          	   <td>  {{emp.e_id}} </td>   
+          	   <td> {{emp.name}} </td>
+               <td> {{emp.email}} </td>
+
+          </tr>	   
+         
+
+         {% endfor %}
+         </table>
+    {% endblock %}
+    </div>
+</body>
+<html>

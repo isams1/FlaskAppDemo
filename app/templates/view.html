@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+  
+  {% block content %}
+
+        <h1> Have a good day , sir !</h1>
+
+
+         <table border = "1" style="width:50%" align = "center">
+         <caption align = "center"> <h1> Checked-In Today</h1> </caption>
+          <tr> <th> <strong> Employee ID  </strong> </th> 
+          	   <th> <strong> Employee Name  </strong> </th> 
+               <th> <strong> Check-In </strong> </th>
+          </tr>
+
+          <tr>
+          	    {% for att in attendances %}
+          	   <td>  {{att.e_id}} </td>   
+          	   <td> {{att.name}} </td>
+               <td> {{att.check_in_date}} </td>
+
+          </tr>	   
+         <br> <br>
+         
+         {% endfor %}
+
+         <p>Click <a href ="/logout">here</a> to logout </p>
+
+    {% endblock %}
+    
+</body>
+<html>
